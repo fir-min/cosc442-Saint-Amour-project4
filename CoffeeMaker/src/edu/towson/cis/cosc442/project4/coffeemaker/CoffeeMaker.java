@@ -65,13 +65,14 @@ public class CoffeeMaker {
 	 * @return boolean
 	 */
 	public boolean recipeExists(Recipe r) {
-		boolean canAddRecipe = true;
+		boolean exist = false;
 		for(int i = 0; i < NUM_RECIPES; i++) {
             if(r.equals(recipeArray[i])) {
-                canAddRecipe = false;
+                exist = true;
+                break;
             }
         }
-		return canAddRecipe;
+		return exist;
 	}
     
 	/**
@@ -85,7 +86,7 @@ public class CoffeeMaker {
         if(r != null) {
 	        for(int i = 0; i < NUM_RECIPES; i++) {
 	            if(r.equals(recipeArray[i])) {
-	                
+	                recipeArray[i] = null;
 	                canDeleteRecipe = true;
 	            }
 	        }
@@ -102,14 +103,11 @@ public class CoffeeMaker {
     public boolean editRecipe(Recipe oldRecipe, Recipe newRecipe) {
         boolean canEditRecipe = false;
         for(int i = 0; i < NUM_RECIPES; i++) {
+        	//System.out.println(oldRecipe.getName() + "%%%" + recipeArray[i].getName());
         	if(recipeArray[i].getName() != null) {
-	            if(newRecipe.equals(recipeArray[i])) { 
-	            	recipeArray[i] = new Recipe();
-	            	if(addRecipe(newRecipe)) {
-	            		canEditRecipe = true;
-	            	} else {
-	            		canEditRecipe = false;
-	            	}
+	            if(oldRecipe.equals(recipeArray[i])) { 
+	            	recipeArray[i] = newRecipe;
+	            	canEditRecipe = true;
 	            }
         	}
         }

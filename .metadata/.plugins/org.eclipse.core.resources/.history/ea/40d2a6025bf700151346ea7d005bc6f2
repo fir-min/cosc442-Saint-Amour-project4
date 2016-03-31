@@ -1,0 +1,20 @@
+package edu.towson.cis.cosc442.project4.coffeemaker;
+
+import junit.framework.TestCase;
+
+/**
+ * The class <code>CoffeeMakerAcceptanceTest</code> contains tests for the
+ * class {@link <code>CoffeeMaker</code>}
+ *
+ * @pattern JUnit Test Case
+ *
+ * @generatedBy CodePro at 3/31/16 12:09 PM
+ *
+ * @author FIRMS
+ *
+ * @version $Revision$
+ */
+public class CoffeeMakerAcceptanceTest extends TestCase
+{
+}
+
