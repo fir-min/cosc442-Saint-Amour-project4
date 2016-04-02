@@ -1,0 +1,576 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>CoffeeMakerFactory.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package FactoryClasses;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMaker;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * The class &#60;code&#62;CoffeeMakerFactory&#60;/code&#62; implements static methods that return instances of the class &#60;code&#62;{@link CoffeeMaker}&#60;/code&#62;.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @generatedBy CodePro at 4/1/16 10:40 AM</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author FIRMS</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @version $Revision: 1.0 $</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class CoffeeMakerFactory</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * Prevent creation of instances of this class.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @generatedBy CodePro at 4/1/16 10:40 AM</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_21'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;private CoffeeMakerFactory() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_22'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * Create an instance of the class &#60;code&#62;{@link CoffeeMaker}&#60;/code&#62;.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @generatedBy CodePro at 4/1/16 10:40 AM</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public static CoffeeMaker createCoffeeMaker() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_31'/>
+31
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_31'>1</a>
+<span>
+
+1. createCoffeeMaker : mutated return of Object value for FactoryClasses/CoffeeMakerFactory::createCoffeeMaker to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return new CoffeeMaker();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1650883_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1650883_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1650883_31'>31</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1650883_31'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createCoffeeMaker<br/><b>Killed by : </b>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest)</span></span> mutated return of Object value for FactoryClasses/CoffeeMakerFactory::createCoffeeMaker to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testRecipeExists_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testDeleteRecipe_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testDeleteRecipe_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testRecipeExists_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testMakeCoffee_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testGetRecipeForName_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testGetRecipeForName_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddRecipe_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (8 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddRecipe_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (20 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testEditRecipe_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testEditRecipe_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testCheckInventory_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_5(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testRecipeExists_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testDeleteRecipe_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testDeleteRecipe_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (13 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testGetRecipeForName_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (12 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testGetRecipeForName_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testMakeCoffee_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddRecipe_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_4(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddRecipe_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testAddInventory_2(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (0 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testEditRecipe_3(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testEditRecipe_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li><li>edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest.testGetRecipes_1(edu.towson.cis.cosc442.project4.coffeemaker.CoffeeMakerTest) (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.5
+
+</body>
+</html>

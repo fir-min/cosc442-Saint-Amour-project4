@@ -31,11 +31,11 @@ public class Inventory {
      * @param chocolate int
      */
     public void setChocolate(int chocolate) {
-    	if(chocolate >= 0) {
-    		Inventory.chocolate = chocolate;
+    	if(chocolate <= -1) {
+    		Inventory.chocolate = 0;
     	}
     	else {
-    		Inventory.chocolate = 0;
+    		Inventory.chocolate = chocolate;
     	}
         
     }

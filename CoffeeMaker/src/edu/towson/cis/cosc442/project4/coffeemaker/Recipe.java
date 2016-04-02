@@ -25,11 +25,11 @@ public class Recipe {
      * @param amtChocolate int
      */
     public void setAmtChocolate(int amtChocolate) {
-    	if(amtChocolate >= 0) {
-    		this.amtChocolate = amtChocolate;
+    	if(amtChocolate < 0) {
+    		this.amtChocolate = 0;
     	}
     	else {
-    		this.amtChocolate = 0;
+    		this.amtChocolate = amtChocolate;
     	}
     }
     /**

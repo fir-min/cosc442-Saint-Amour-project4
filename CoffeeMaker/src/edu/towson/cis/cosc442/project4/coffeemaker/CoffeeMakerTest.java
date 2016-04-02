@@ -61,13 +61,13 @@ public class CoffeeMakerTest {
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
 		int amtCoffee = 1;
 		int amtMilk = 1;
-		int amtSugar = 0;
-		int amtChocolate = -1;
+		int amtSugar = 1;
+		int amtChocolate = 1;
 
 		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
 
 		// add additional test code here
-		assertEquals(false, result);
+		assertEquals(true, result);
 	}
 
 	/**
@@ -153,9 +153,13 @@ public class CoffeeMakerTest {
 		int amtChocolate = 1;
 
 		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
+		Inventory i = fixture.checkInventory();
 
 		// add additional test code here
-		assertEquals(false, result);
+		assertEquals(16, i.getCoffee());
+		assertEquals(16, i.getMilk());
+		assertEquals(16, i.getSugar());
+		assertEquals(16, i.getChocolate());
 	}
 
 	/**
@@ -424,14 +428,15 @@ public class CoffeeMakerTest {
 	public void testGetRecipeForName_1()
 		throws Exception {
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
-		String name = "";
-
+		String name = "test";
+		Recipe r = new Recipe();
+		r.setName(name);
+		fixture.addRecipe(r);
 		Recipe result = fixture.getRecipeForName(name);
 
 		// add additional test code here
-		assertNotNull(result);
-		assertEquals(null, result.toString());
-		assertEquals(null, result.getName());
+		
+		assertEquals(name, result.getName());
 		assertEquals(0, result.getPrice());
 		assertEquals(0, result.getAmtChocolate());
 		assertEquals(0, result.getAmtCoffee());
@@ -580,12 +585,25 @@ public class CoffeeMakerTest {
 		throws Exception {
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
 		Recipe r = RecipeFactory.createRecipe();
-		int amtPaid = 1;
-
+		Inventory i = fixture.checkInventory();
+		r.setName("Coffee");
+		r.setPrice(2);
+		r.setAmtCoffee(3);
+		r.setAmtMilk(3);
+		r.setAmtSugar(3);
+		r.setAmtChocolate(3);
+		int amtPaid = 2;
+		
+		
 		int result = fixture.makeCoffee(r, amtPaid);
 
 		// add additional test code here
-		assertEquals(1, result);
+		assertEquals(0, result);
+		assertEquals(amtPaid, r.getPrice());
+		assertEquals(12, i.getChocolate());
+		assertEquals(12, i.getCoffee());
+		assertEquals(12, i.getMilk());
+		assertEquals(12, i.getSugar());
 	}
 
 	/**
@@ -620,11 +638,15 @@ public class CoffeeMakerTest {
 		throws Exception {
 		CoffeeMaker fixture = CoffeeMakerFactory.createCoffeeMaker();
 		Recipe r = RecipeFactory.createRecipe();
+		String name = "testing";
+		r.setName(name);
+		
+		fixture.addRecipe(r);
 
 		boolean result = fixture.recipeExists(r);
 
 		// add additional test code here
-		assertEquals(false, result);
+		assertEquals(true, result);
 	}
 
 	/**

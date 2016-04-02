@@ -90,6 +90,9 @@ public class InventoryTest {
 
 		// add additional test code here
 		assertEquals(15, result);
+		
+		fixture.setChocolate(-1);
+		assertEquals(0, fixture.getChocolate());
 	}
 
 	/**
